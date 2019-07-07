@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "esModuleInterop": true,
+        "declaration": false,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "lib": ["es2015"],
+        "types": ["jest", "node"],
+        "outDir": "dist",
+        "sourceRoot": "src",
+        "sourceMap": true,
+        "baseUrl": "src",
+        "resolveJsonModule": true
+    },
+    "exclude": ["src/**/*.test.ts"]
+}

@@ -3,12 +3,8 @@ import { readdir, statSync } from 'fs';
 
 const readdirAsync = promisify(readdir);
 
-export async function recursiveReaddir(
-    path: string,
-    regexString?: string,
-    initialFileList?: string[],
-): Promise<string[]> {
-    let fileList: string[] = initialFileList || [];
+export async function recursiveReaddir(path, regexString, initialFileList) {
+    let fileList = initialFileList || [];
     const regex = new RegExp(regexString);
 
     const files = await readdirAsync(path);

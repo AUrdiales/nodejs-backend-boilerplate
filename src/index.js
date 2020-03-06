@@ -6,8 +6,7 @@ const { PORT = 3000 } = process.env;
 
 (async () => {
     const httpServer = createServer(await server());
-
-    httpServer.listen(PORT, (): void => {
+    httpServer.listen(PORT, () => {
         log(`Server started on port: ${PORT}`);
     });
 })();

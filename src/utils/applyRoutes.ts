@@ -3,9 +3,9 @@ import { resolve } from 'path';
 import { recursiveReaddir } from './recursiveReadDir';
 
 export async function unifyRoutes() {
-    const files = await recursiveReaddir(resolve(__dirname, '../'), '.*.controller.ts');
-    let controllers = [];
-    for (let file of files) {
+    const files = await recursiveReaddir(resolve(__dirname, '../'), '.*.controller.(ts|js)');
+    const controllers = [];
+    for (const file of files) {
         controllers.push(require(file).default);
     }
     return controllers;

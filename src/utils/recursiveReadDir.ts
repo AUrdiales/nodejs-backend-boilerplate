@@ -12,7 +12,7 @@ export async function recursiveReaddir(
     const regex = new RegExp(regexString);
 
     const files = await readdirAsync(path);
-    for (let file of files) {
+    for (const file of files) {
         if (statSync(`${path}/${file}`).isDirectory()) {
             fileList = await recursiveReaddir(`${path}/${file}/`, regexString, fileList);
         } else {

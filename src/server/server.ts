@@ -3,12 +3,12 @@ import express, { Express, Router } from 'express';
 import { setRouter } from './router';
 
 process.on('uncaughtException', (error: Error) => {
-    log(JSON.stringify(error));
+    log(error as any);
     process.exit(1);
 });
 
 process.on('unhandledRejection', (error: Error) => {
-    log(JSON.stringify(error));
+    log(error as any);
     process.exit(1);
 });
 
